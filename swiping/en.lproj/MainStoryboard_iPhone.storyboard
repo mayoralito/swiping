@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kNJ-un-G7H">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - Cards-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="pCX-2L-Pjr">
+                                <color key="backgroundColor" red="1" green="0.3252593319" blue="0.2308234874" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="3UY-Wq-NUp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changePage:" destination="2" eventType="valueChanged" id="Rd9-S4-fZV"/>
+                                </connections>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="NassScrollView" translatesAutoresizingMaskIntoConstraints="NO" id="Xaw-vb-wEQ" customClass="NessScrollView"/>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pCX-2L-Pjr" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="104" id="9oE-zu-WMq"/>
+                            <constraint firstItem="Xaw-vb-wEQ" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="PXZ-1Y-lVq"/>
+                            <constraint firstItem="Xaw-vb-wEQ" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="W6l-NC-e1j"/>
+                            <constraint firstAttribute="bottom" secondItem="pCX-2L-Pjr" secondAttribute="bottom" constant="6" id="WZU-gW-YCX"/>
+                            <constraint firstItem="Xaw-vb-wEQ" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="dc2-Q3-Agf"/>
+                            <constraint firstItem="Xaw-vb-wEQ" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="l14-mY-JUe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cards" id="QbA-HQ-Mul"/>
+                    <connections>
+                        <outlet property="customPageControl" destination="pCX-2L-Pjr" id="deh-XM-6ny"/>
+                        <outlet property="ownScrollView" destination="Xaw-vb-wEQ" id="HOV-Jk-Mlb"/>
+                        <segue destination="17n-b7-ziL" kind="modal" identifier="goDetail" modalTransitionStyle="crossDissolve" id="ei6-Nn-RYs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YF6-Bo-f2D">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="kNJ-un-G7H" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cey-fS-FTB">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="4qQ-gL-1w8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D7t-y0-4Vt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dcW-be-cvV">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="17n-b7-ziL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ysf-fB-zoq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8Cf-Eb-cvw" kind="relationship" relationship="rootViewController" id="lFF-xl-HoG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Epw-gN-TfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="621" y="114"/>
+        </scene>
+        <!--Detail Scroll View Controller - Detail-->
+        <scene sceneID="Cfj-vT-0d5">
+            <objects>
+                <viewController id="8Cf-Eb-cvw" customClass="DetailScrollViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HMq-R8-jjP">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="NassScrollView" translatesAutoresizingMaskIntoConstraints="NO" id="BmY-kF-icZ" customClass="NessScrollView"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-0e-gLA">
+                                <color key="backgroundColor" red="1" green="0.3252593319" blue="0.2308234874" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="Byw-OU-S89"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BmY-kF-icZ" firstAttribute="top" secondItem="HMq-R8-jjP" secondAttribute="top" type="default" id="38C-5X-Wor"/>
+                            <constraint firstItem="BmY-kF-icZ" firstAttribute="leading" secondItem="HMq-R8-jjP" secondAttribute="leading" type="default" id="KGv-tV-yq7"/>
+                            <constraint firstAttribute="bottom" secondItem="ufz-0e-gLA" secondAttribute="bottom" constant="6" id="WG0-6E-TBt"/>
+                            <constraint firstItem="BmY-kF-icZ" firstAttribute="bottom" secondItem="HMq-R8-jjP" secondAttribute="bottom" type="default" id="rVz-Y2-QXW"/>
+                            <constraint firstItem="ufz-0e-gLA" firstAttribute="centerX" secondItem="BmY-kF-icZ" secondAttribute="centerX" type="default" id="rs2-p8-h5k"/>
+                            <constraint firstItem="BmY-kF-icZ" firstAttribute="trailing" secondItem="HMq-R8-jjP" secondAttribute="trailing" type="default" id="yUo-5l-zKj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="aGB-xW-9xl">
+                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="F9c-Cv-ZDg">
+                            <connections>
+                                <action selector="backBtn:" destination="8Cf-Eb-cvw" id="jxt-lA-yop"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="customPageControl" destination="ufz-0e-gLA" id="7Ij-Vk-1Yy"/>
+                        <outlet property="ownScrollView" destination="BmY-kF-icZ" id="IRA-iI-x28"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qba-Bu-uF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="114"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="DetailScrollViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailScrollViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backBtn:"/>
+                <relationship kind="action" name="takePictureBtn:"/>
+                <relationship kind="outlet" name="customPageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="ownScrollView" candidateClass="NessScrollView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NessScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NessScrollView.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="openDetail:"/>
+                <relationship kind="outlet" name="customPageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="ownScrollView" candidateClass="NessScrollView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
